@@ -1,0 +1,33 @@
+{
+  "name": "code-note",
+  "version": "1.0.0",
+  "description": "A coding/compiler-styled desktop sticky note & todo widget",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.local.codenote",
+    "productName": "CodeNote",
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "style.css",
+      "assets/**/*",
+      "scripts/**/*"
+    ]
+  }
+}
