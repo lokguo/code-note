@@ -144,16 +144,22 @@ body.desk-locked #notesArea {
   background: rgba(var(--bg-rgb), 0.3);
 }
 
-body.desk-locked .todo-item:hover {
-  background: rgba(var(--bg-secondary-rgb), 0.5);
-}
-
 body.desk-locked .statusbar {
   background: rgba(var(--accent-rgb), 0.55);
 }
 
 body.desk-locked #pinBtn {
   color: var(--accent);
+}
+
+/* Everything except the titlebar is non-interactive while pinned, so no
+   element below it should show hover/focus affordances (checkbox cursor,
+   todo-item highlight, drag handle, delete button, etc). */
+body.desk-locked .tabs,
+body.desk-locked .panel,
+body.desk-locked .todo-input-row,
+body.desk-locked .statusbar {
+  pointer-events: none;
 }
 .tbtn-close:hover {
   background: var(--danger);
